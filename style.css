@@ -1,0 +1,242 @@
+:root {
+  color-scheme: light;
+  --paper: #f5eedf;
+  --ink: #382e25;
+  --muted-ink: #75634f;
+  --rule: #c5b394;
+  --blue: #59798a;
+  --reading-measure: 30em;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+::selection {
+  color: var(--ink);
+  background: #e6d9bc;
+}
+
+main {
+  padding-inline: clamp(1.5rem, 6vw, 3.5rem);
+}
+
+.book {
+  max-inline-size: var(--reading-measure);
+  margin-inline: auto;
+  padding-block: clamp(5rem, 6vw, 6rem) 4rem;
+  font-size: 1.4375rem;
+  line-height: 1.55;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
+.title-page {
+  margin-block-end: 2em;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.125rem, 6.25vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.author {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.875rem;
+  max-inline-size: 19rem;
+  margin: 0.875rem auto 0;
+  color: var(--muted-ink);
+  font-size: 1.0625rem;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+}
+
+.author::before,
+.author::after {
+  content: "";
+  block-size: 1px;
+  background: var(--rule);
+  /* Center on Literata's visible letterforms, rather than its line box. */
+  transform: translateY(0.06em);
+}
+
+.story p {
+  margin: 0;
+  text-align: justify;
+  text-align-last: start;
+  text-indent: min(1.25em, 6%);
+  text-wrap: pretty;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+  hyphenate-limit-chars: 7 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-zone: 8%;
+  overflow-wrap: break-word;
+  orphans: 3;
+  widows: 3;
+}
+
+.story p:first-child {
+  text-indent: 0;
+}
+
+.story .end-word {
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+.story .dialogue-lead {
+  display: inline-block;
+  text-indent: 0;
+  white-space: nowrap;
+}
+
+em {
+  font-style: italic;
+}
+
+/* A solitary dithered sphere, with room for its gentle floating motion. */
+.endpiece {
+  --sphere-size: 6rem;
+  position: relative;
+  inline-size: var(--sphere-size);
+  aspect-ratio: 6 / 7;
+  margin: 2em auto 0;
+  pointer-events: none;
+  break-inside: avoid;
+}
+
+.endpiece::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: min(400%, calc(100vw - 3.5rem));
+  block-size: 1.5px;
+  transform: translate(-50%, -50%);
+  /* Fade into the paper, leaving the sphere's dithered face unobstructed. */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #282828d9 calc(50% - var(--sphere-size) * 0.325),
+    transparent calc(50% - var(--sphere-size) * 0.325),
+    transparent calc(50% + var(--sphere-size) * 0.325),
+    #282828d9 calc(50% + var(--sphere-size) * 0.325),
+    transparent
+  );
+}
+
+.endpiece img,
+.endpiece canvas {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.endpiece canvas {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  image-rendering: pixelated;
+}
+
+.endpiece.is-ready canvas {
+  visibility: visible;
+}
+
+.endpiece.is-ready img {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 40rem) {
+  .book {
+    font-size: 1.3125rem;
+  }
+
+  .title-page {
+    margin-block-end: 1.9em;
+  }
+
+  .story p {
+    -webkit-hyphenate-limit-before: 2;
+    hyphenate-limit-chars: 6 2 3;
+  }
+}
+
+@media print {
+  @page {
+    size: A5;
+    margin: 18mm 17mm 20mm;
+  }
+
+  :root {
+    background: #fff;
+    color: #000;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .book {
+    max-inline-size: none;
+    padding: 0;
+    font-size: 11.5pt;
+    line-height: 1.45;
+  }
+
+  .title-page {
+    margin-block-end: 2em;
+    break-after: avoid;
+  }
+
+  h1 {
+    color: #000;
+    font-size: 25pt;
+  }
+
+  .author {
+    color: #444;
+    font-size: 10.5pt;
+  }
+
+  .endpiece {
+    --sphere-size: 16mm;
+    break-before: avoid;
+  }
+
+  .endpiece canvas {
+    display: none;
+  }
+
+  .endpiece.is-ready img {
+    visibility: visible;
+  }
+}
