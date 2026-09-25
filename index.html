@@ -8,10 +8,10 @@
   <meta name="color-scheme" content="light">
   <title>O jogo da salvação</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <script src="theme.js?v=fd46a9810051"></script>
+  <script src="theme.js?v=6d19b55dccde"></script>
   <link rel="preload" href="assets/fonts/literata-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/reading-fonts.css">
-  <link rel="stylesheet" href="style.css?v=53b07e320598">
+  <link rel="stylesheet" href="style.css?v=7dcc750a6a33">
   <script src="endpiece.js?v=2e75cc8f91f4" defer></script>
   <script src="assets/reader.js?v=215b7a569030" defer></script>
 </head>
@@ -19,7 +19,16 @@
   <main>
     <article class="book" aria-labelledby="title">
       <button class="theme-toggle" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro" hidden>
-        <span aria-hidden="true">☾</span>
+        <svg class="theme-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <defs>
+            <mask id="theme-moon-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+              <rect width="24" height="24" fill="white" />
+              <circle class="theme-cutout" cx="17" cy="8" r="8" fill="black" />
+            </mask>
+          </defs>
+          <circle class="theme-orb" cx="12" cy="12" r="8" mask="url(#theme-moon-cutout)" />
+          <path class="theme-rays" d="M12 2v2 M12 20v2 M2 12h2 M20 12h2 M5 5l1.4 1.4 M17.6 17.6L19 19 M5 19l1.4-1.4 M17.6 6.4L19 5" />
+        </svg>
       </button>
       <header class="title-page">
         <h1 id="title">O jogo da salvação</h1>

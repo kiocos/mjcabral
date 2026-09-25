@@ -11,7 +11,6 @@
       const label = dark ? 'Ativar tema claro' : 'Ativar tema escuro';
       button.setAttribute('aria-label', label);
       button.title = label;
-      button.querySelector('span').textContent = dark ? '☼' : '☾';
     }
   }
 

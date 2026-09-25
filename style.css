@@ -1,6 +1,8 @@
 :root {
   color-scheme: light;
   --paper: #f5eedf;
+  --footer-paper: #e7ddca;
+  --endpiece-gap: clamp(5rem, 15svh, 9rem);
   --ink: #382e25;
   --muted-ink: #75634f;
   --rule: #c5b394;
@@ -20,6 +22,7 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
   --paper: #201e1b;
+  --footer-paper: #131210;
   --ink: #e5dccb;
   --muted-ink: #b7a68e;
   --rule: #65594a;
@@ -33,6 +36,11 @@
 
 body {
   margin: 0;
+  background-image: linear-gradient(to bottom, var(--paper), var(--footer-paper));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /* Only the page ending fades: the last two text lines, ornament, and bottom padding. */
+  background-size: 100% calc(var(--endpiece-gap) + 15rem);
 }
 
 ::selection {
@@ -72,6 +80,58 @@ body {
 .theme-toggle:focus-visible {
   outline: 1px solid var(--muted-ink);
   outline-offset: 2px;
+}
+
+.theme-icon {
+  display: block;
+  inline-size: 1.375rem;
+  block-size: 1.375rem;
+}
+
+.theme-orb {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.15;
+  transform-origin: 12px 12px;
+}
+
+.theme-rays {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  transform-origin: 12px 12px;
+  transform: rotate(-30deg) scale(0.65);
+  opacity: 0;
+}
+
+:root[data-theme="dark"] .theme-orb {
+  fill: transparent;
+  transform: scale(0.6);
+  stroke-width: 1.9;
+}
+
+:root[data-theme="dark"] .theme-cutout {
+  transform: translate(12px, -12px);
+}
+
+:root[data-theme="dark"] .theme-rays {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-orb {
+    transition: transform 420ms ease, fill 420ms ease, stroke-width 420ms ease;
+  }
+
+  .theme-cutout {
+    transition: transform 420ms ease;
+  }
+
+  .theme-rays {
+    transition: transform 420ms ease, opacity 280ms ease;
+  }
 }
 
 main {
@@ -194,7 +254,7 @@ em {
   position: relative;
   inline-size: var(--sphere-size);
   aspect-ratio: 6 / 7;
-  margin: 2em auto 0;
+  margin: var(--endpiece-gap) auto 0;
   pointer-events: none;
   break-inside: avoid;
 }
@@ -291,6 +351,10 @@ em {
     display: none;
   }
 
+  body {
+    background: none;
+  }
+
   main {
     padding: 0;
   }
@@ -319,6 +383,7 @@ em {
 
   .endpiece {
     --sphere-size: 16mm;
+    margin-block-start: 2em;
     break-before: avoid;
   }
 

@@ -73,7 +73,16 @@ def render():
   <main>
     <article class="book" aria-labelledby="title">
       <button class="theme-toggle" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro" hidden>
-        <span aria-hidden="true">☾</span>
+        <svg class="theme-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <defs>
+            <mask id="theme-moon-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+              <rect width="24" height="24" fill="white" />
+              <circle class="theme-cutout" cx="17" cy="8" r="8" fill="black" />
+            </mask>
+          </defs>
+          <circle class="theme-orb" cx="12" cy="12" r="8" mask="url(#theme-moon-cutout)" />
+          <path class="theme-rays" d="M12 2v2 M12 20v2 M2 12h2 M20 12h2 M5 5l1.4 1.4 M17.6 17.6L19 19 M5 19l1.4-1.4 M17.6 6.4L19 5" />
+        </svg>
       </button>
       <header class="title-page">
         <h1 id="title">{title}</h1>
