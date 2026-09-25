@@ -18,14 +18,6 @@ def inline(text):
     text = re.sub(r"— +", "—\u00a0", text)
     text = re.sub(r"(?<=—\u00a0)… +", "…\u00a0", text)
     text = re.sub(r" +(?=—[,.;:!?])", "\u00a0", text)
-    # Avoid a tiny last line such as "dele." without binding long phrases.
-    text = re.sub(
-        r"(\S+) ([^\W\d_]{1,5}[.!?…]*)$",
-        lambda match: match[1] + "\u00a0" + match[2]
-        if len(match[0]) <= 16
-        else match[0],
-        text,
-    )
     rendered = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", html.escape(text))
     # Do not leave the last syllable of a paragraph alone on a new line.
     # The optional closing tag also preserves emphasis on a final word.
@@ -53,6 +45,9 @@ def render():
     title = html.escape(blocks[0][2:].strip())
     author = html.escape(blocks[1].strip())
     stylesheet_version = sha256((ROOT / "style.css").read_bytes()).hexdigest()[:12]
+    reader_version = sha256((ROOT / "assets/reader.js").read_bytes()).hexdigest()[:12]
+    theme_version = sha256((ROOT / "theme.js").read_bytes()).hexdigest()[:12]
+    endpiece_version = sha256((ROOT / "endpiece.js").read_bytes()).hexdigest()[:12]
     paragraphs = "\n".join(
         f"        <p>{inline(' '.join(block.splitlines()))}</p>" for block in blocks[2:]
     )
@@ -67,14 +62,19 @@ def render():
   <meta name="color-scheme" content="light">
   <title>{title}</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js?v={theme_version}"></script>
   <link rel="preload" href="assets/fonts/literata-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/reading-fonts.css">
   <link rel="stylesheet" href="style.css?v={stylesheet_version}">
-  <script src="endpiece.js" defer></script>
+  <script src="endpiece.js?v={endpiece_version}" defer></script>
+  <script src="assets/reader.js?v={reader_version}" defer></script>
 </head>
 <body>
   <main>
     <article class="book" aria-labelledby="title">
+      <button class="theme-toggle" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro" hidden>
+        <span aria-hidden="true">☾</span>
+      </button>
       <header class="title-page">
         <h1 id="title">{title}</h1>
         <p class="author">{author}</p>
@@ -83,7 +83,8 @@ def render():
 {paragraphs}
       </div>
       <div class="endpiece" id="endpiece" aria-hidden="true">
-        <img src="assets/endpiece.svg" alt="" width="96" height="112" loading="lazy">
+        <img class="endpiece-light" src="assets/endpiece.svg" alt="" width="96" height="112" loading="lazy">
+        <img class="endpiece-dark" src="assets/endpiece-dark.svg" alt="" width="96" height="112" loading="lazy">
         <canvas width="72" height="84"></canvas>
       </div>
     </article>

@@ -4,7 +4,7 @@
   const context = canvas?.getContext("2d");
   if (!context) return;
 
-  // A single dark gray sphere, shaded with ordered dithering on the paper.
+  // Fixed lighting and ordered dithering; only the whole sphere floats.
   const bayer = [
      0, 48, 12, 60,  3, 51, 15, 63,
     32, 16, 44, 28, 35, 19, 47, 31,
@@ -16,6 +16,8 @@
     42, 26, 38, 22, 41, 25, 37, 21,
   ];
   const ink = [40, 40, 40];
+  const highlight = [220, 210, 190];
+  const shadow = [28, 27, 24];
   const { width, height } = canvas;
   const frame = context.createImageData(width, height);
   const radius = 22;
@@ -36,12 +38,14 @@
         y: ny * 0.976 - nz * 0.218,
         z: ny * 0.218 + nz * 0.976,
         shade: 0.16 + (1 - light) * 0.8,
+        overheadLight: Math.max(0, -nx * 0.48 - ny * 0.66 + nz * 0.58),
         threshold: (bayer[(y % 8) * 8 + x % 8] + 0.5) / 64,
       });
     }
   }
 
   function draw() {
+    const dark = document.documentElement.dataset.theme === "dark";
     const data = frame.data;
     data.fill(0);
 
@@ -50,12 +54,17 @@
       // Subtle variations give the still surface some depth.
       const grain = Math.sin(x * 5 + Math.sin(z * 4 + point.y * 2))
         * Math.cos(point.y * 5 - z * 3);
-      const density = point.shade + grain * 0.17;
-      if (density <= point.threshold) continue;
+      let color = ink;
+      if (dark) {
+        // A bright upper-left face falls into a soft charcoal shadow.
+        const light = Math.max(0, (point.overheadLight - 0.12) / 0.88);
+        const density = Math.pow(light, 1.65) * (0.88 + grain * 0.1);
+        color = density > point.threshold ? highlight : shadow;
+      } else if (point.shade + grain * 0.17 <= point.threshold) continue;
       const offset = point.index * 4;
-      data[offset] = ink[0];
-      data[offset + 1] = ink[1];
-      data[offset + 2] = ink[2];
+      data[offset] = color[0];
+      data[offset + 1] = color[1];
+      data[offset + 2] = color[2];
       data[offset + 3] = 255;
     }
 
@@ -68,6 +77,10 @@
   }
 
   draw();
+  new MutationObserver(draw).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
   float(0);
   ornament.classList.add("is-ready");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");

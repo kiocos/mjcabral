@@ -1,0 +1,17 @@
+{
+  "name": "o-jogo-da-salvacao",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "python3 -m http.server 8008",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@chenglou/pretext": "0.0.9",
+    "hyphen": "1.14.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

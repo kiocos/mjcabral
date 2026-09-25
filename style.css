@@ -4,6 +4,8 @@
   --ink: #382e25;
   --muted-ink: #75634f;
   --rule: #c5b394;
+  --selection: #e6d9bc;
+  --endpiece-line: #282828d9;
   --blue: #59798a;
   --reading-measure: 30em;
   background: var(--paper);
@@ -13,6 +15,16 @@
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #201e1b;
+  --ink: #e5dccb;
+  --muted-ink: #b7a68e;
+  --rule: #65594a;
+  --selection: #504332;
+  --endpiece-line: #b0b0b0d9;
 }
 
 * {
@@ -25,7 +37,41 @@ body {
 
 ::selection {
   color: var(--ink);
-  background: #e6d9bc;
+  background: var(--selection);
+}
+
+.theme-toggle {
+  position: absolute;
+  inset-block-start: 0.875rem;
+  inset-inline-end: 0;
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted-ink);
+  font-family: inherit;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+}
+
+.theme-toggle:focus-visible {
+  outline: 1px solid var(--muted-ink);
+  outline-offset: 2px;
 }
 
 main {
@@ -33,6 +79,7 @@ main {
 }
 
 .book {
+  position: relative;
   max-inline-size: var(--reading-measure);
   margin-inline: auto;
   padding-block: clamp(5rem, 6vw, 6rem) 4rem;
@@ -89,15 +136,16 @@ h1 {
   text-align: justify;
   text-align-last: start;
   text-indent: min(1.25em, 6%);
-  text-wrap: pretty;
+  /* Avoid redistributing short paragraphs into widely spaced lines. */
+  text-wrap: wrap;
   -webkit-hyphens: auto;
   hyphens: auto;
-  -webkit-hyphenate-limit-before: 3;
-  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-before: 2;
+  -webkit-hyphenate-limit-after: 2;
   -webkit-hyphenate-limit-lines: 2;
-  hyphenate-limit-chars: 7 3 3;
+  hyphenate-limit-chars: 6 2 2;
   hyphenate-limit-lines: 2;
-  hyphenate-limit-zone: 8%;
+  hyphenate-limit-zone: 0;
   overflow-wrap: break-word;
   orphans: 3;
   widows: 3;
@@ -112,6 +160,28 @@ h1 {
   display: inline-block;
   text-indent: 0;
   white-space: nowrap;
+}
+
+/* Pretext composes the paragraph; the browser still paints real HTML text. */
+.story p.is-typeset {
+  text-indent: 0;
+  text-align: start;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+.typeset-line {
+  display: inline;
+  white-space: nowrap;
+  text-indent: 0;
+}
+
+.typeset-word {
+  word-spacing: normal;
+}
+
+.typeset-hyphen::after {
+  content: "-";
 }
 
 em {
@@ -141,10 +211,10 @@ em {
   background: linear-gradient(
     90deg,
     transparent,
-    #282828d9 calc(50% - var(--sphere-size) * 0.325),
+    var(--endpiece-line) calc(50% - var(--sphere-size) * 0.325),
     transparent calc(50% - var(--sphere-size) * 0.325),
     transparent calc(50% + var(--sphere-size) * 0.325),
-    #282828d9 calc(50% + var(--sphere-size) * 0.325),
+    var(--endpiece-line) calc(50% + var(--sphere-size) * 0.325),
     transparent
   );
 }
@@ -171,6 +241,20 @@ em {
   visibility: hidden;
 }
 
+.endpiece .endpiece-dark {
+  display: none;
+}
+
+@media screen {
+  :root[data-theme="dark"] .endpiece .endpiece-light {
+    display: none;
+  }
+
+  :root[data-theme="dark"] .endpiece .endpiece-dark {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 40rem) {
   .book {
     font-size: 1.3125rem;
@@ -181,8 +265,8 @@ em {
   }
 
   .story p {
-    -webkit-hyphenate-limit-before: 2;
-    hyphenate-limit-chars: 6 2 3;
+    -webkit-hyphenate-limit-lines: 3;
+    hyphenate-limit-lines: 3;
   }
 }
 
@@ -192,9 +276,19 @@ em {
     margin: 18mm 17mm 20mm;
   }
 
-  :root {
+  :root,
+  :root[data-theme="dark"] {
+    color-scheme: light;
+    --paper: #fff;
+    --ink: #000;
+    --rule: #aaa;
+    --endpiece-line: #282828d9;
     background: #fff;
     color: #000;
+  }
+
+  .theme-toggle {
+    display: none;
   }
 
   main {
