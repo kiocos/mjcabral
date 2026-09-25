@@ -42,6 +42,10 @@ Typography and colors live in `style.css`. The entire page uses Literata, with a
 
 ## Publishing
 
-Run `npm run build`, then upload `index.html`, `style.css`, `theme.js`, `endpiece.js`, and `assets/` to any static host. The checked-in `assets/reader.js` bundle includes Pretext and Portuguese hyphenation; the published site needs no Node server, CDN, or `node_modules/`. The PDF, Markdown, `reader.js`, `typesetting.js`, tests, and build scripts do not need to be published.
+Run `npm run build` to generate `public/`, containing `index.html`, `style.css`, `theme.js`, `endpiece.js`, and `assets/`. This generated directory is recreated on every build and is ignored by Git. Upload its contents to any static host. The browser bundle includes Pretext and Portuguese hyphenation; the published site needs no Node server, CDN, or `node_modules/`. The PDF, Markdown, build scripts, and tests stay outside the published directory.
+
+For Vercel, import the repository with the project root set to its root directory (`.`). The checked-in [vercel.json](vercel.json) selects the **Other** framework preset, installs with `npm ci`, builds with `npm run build`, and publishes `public/`. These settings override the corresponding dashboard values, as described in the [Vercel configuration reference](https://vercel.com/docs/project-configuration/vercel-json). No environment variables are required. Builds use Node.js and Python 3; Python is only used to generate the static HTML. The pinned esbuild installation script is explicitly allowed in `package.json` for npm versions that require approval.
+
+After committing and pushing these files, deploy the new commit in Vercel. To inspect the same output locally, run `npm run build` followed by `npm run preview`, then open http://localhost:8009. `npm start` continues to serve the working files on port 8008.
 
 The stylesheet also includes an A5 print layout.
