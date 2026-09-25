@@ -8,7 +8,7 @@ Estavam ali em uma enorme enfermaria especializada, referência no acompanhament
 
 Finalmente a enfermeira apareceu, saindo de uma porta iluminada ao longe. Empurrava um carrinho com a medicação de José e algumas bolsas de soro.
 
-— José dos Santos Caifás, certo? — ela perguntou ao parar ao lado dele.
+— José dos Santos Caifás, certo? — ela perguntou ao parar ao seu lado.
 
 — Eu mesmo — José respondeu.
 
@@ -56,9 +56,9 @@ José ergueu a cabeça.
 
 — Alternativa?
 
-— Sim — o anjo explicou. — Vossas miseráveis súplicas abalaram toda a criação, dos céus ao inferno. Dentre vós cem, pelo menos quarenta seriam levados pela Morte nas próximas quatro semanas se nada fosse feito. Por isso, busquei um acordo com ela que pode vir a salvar a maioria.
+— Sim — o anjo explicou. — Vossas miseráveis súplicas abalaram toda a criação, dos céus ao inferno. Dos cem entre vós, pelo menos quarenta seriam levados pela Morte nas próximas quatro semanas se nada fosse feito. Por isso, busquei um acordo com ela que pode vir a salvar a maioria.
 
-— Com ela quem? — José questionou. — A Morte!?
+— Com ela quem? — José questionou. — Com a Morte!?
 
 — A própria — o anjo confirmou. — Em sua eterna fome, ela me exigiu o fim de pelo menos uma vida no dia de hoje.
 
@@ -70,7 +70,7 @@ José ergueu a cabeça.
 
 Em um movimento suave, o anjo criou entre os dois uma esfera flutuante de luz azul.
 
-— A morte propôs que eu lhe trouxesse a seguinte escolha: toque nessa esfera com a sua mão direita e algum dos seus colegas será levado por ela ainda hoje, enquanto os demais, incluindo você, serão curados da mazela que vos aflige. Permaneça sentado e o caminho natural não será alterado.
+— A morte propôs que eu lhe trouxesse a seguinte escolha: toque nessa esfera com a sua mão direita e algum dos seus colegas será levado por ela ainda hoje, enquanto os demais, incluindo vós, serão curados de toda e qualquer mazela que os aflija. Permaneça sentado e o caminho natural não será alterado.
 
 — Alguém será levado? — José perguntou. — Quem?
 
@@ -98,7 +98,7 @@ Estava ele ali de volta ao círculo, junto aos demais. Aqueles que podiam ser vi
 
 De dentro de um desses confinamentos, recuou uma fração do anjo para se unir à sua forma central maior. Em seguida, as paredes ao redor daquela pessoa também se desmancharam, revelando a mesma cena: indivíduo em pé, mais uma esfera de luz vermelha.
 
-Logo, quase todos estavam ali, menos a pessoa do número onze, a qual permaneceu confinada por um tempo muito maior. De repente, a fração do anjo que estava lá também recuou:
+Logo, quase todos estavam ali, menos o indivíduo do número onze, o qual permaneceu confinado por um tempo muito maior. De repente, a fração do anjo que estava lá também recuou:
 
 — Aaaaaarghhh! — exclamou em frustração ao correr para se unir ao corpo gigante de luz ao centro do círculo.
 
@@ -108,7 +108,7 @@ As paredes ao redor do número onze se desfizeram. Lá estava um rapaz jovem, ai
 
 José estremeceu. Seria possível que aquele fosse…?
 
-— Número trinta e quatro — disse o tal anjo em um tom ameaçador. Então, ao esticar a mão, recebeu a esfera vermelha que flutuou a partir da moça até ele. — Vamos começar por você. Escolhestes sacrificar um desses seus irmãos pela cura dos demais. — Em suas palavras, ele claramente tentava manter a formalidade. Então, em um movimento suave, esticou a esfera aos poucos até o formato do que parecia ser uma lança. — Que seja feita a vossa vontade — disse, atirando a lança para cima, muito além de onde se pudesse enxergar.
+— Número trinta e quatro — disse o tal anjo em um tom ameaçador. Então, ao esticar a mão, recebeu a esfera vermelha que flutuou a partir da moça até ele. — Vamos começar por você. Escolhestes sacrificar um desses seus irmãos pela cura dos demais. — Em suas palavras, ele tentava forçar um grau de formalidade. Então, em um movimento suave, esticou a esfera aos poucos até o formato do que parecia ser uma lança. — Que seja feita a vossa vontade — disse, atirando a lança para cima, muito além de onde se pudesse enxergar.
 
 Todos trocaram olhares de puro medo, e a espera de segundos pareceu durar horas. De repente, a lança reapareceu. Como um raio, ela acertou o senhor que estava identificado com o número quarenta e nove, bem ao lado direito de José. Morte instantânea.
 
@@ -126,7 +126,7 @@ José tentou dar um passo para trás e correr, mas seus pés pesaram no lugar. A
 
 Até aqueles que tiveram a coragem de comemorar pararam de imediato.
 
-— Número setenta e três — a criatura chamou, puxando de longe a esfera vermelha para a sua mão. — Escolheste sacrificar um desses seus irmãos pela cura dos demais. Agora isso é um pouco redundante, mas a tua escolha será respeitada. — Assim, o monstro jogou mais uma lança de luz vermelha para cima.
+— Infelizmente, ele não está mais aqui para ver isso — a criatura disse, puxando de longe para a sua mão a esfera vermelha que estava na frente do senhor falecido. — Honrarei a vossa escolha mesmo assim. Número quarenta e nove! — gritou aos ventos. — Escolheste sacrificar um desses seus irmãos pela cura dos demais. Curar pessoas já curadas é um pouco redundante, mas quem sou eu para julgar? Que seja feita a vossa vontade. — Assim, o monstro jogou mais uma lança de luz vermelha para cima.
 
 Ao entenderem a armadilha, as pessoas se desesperaram. Muitos, tentando correr, caíram ao chão pelo peso dos grilhões nos quais não haviam reparado até então. Outros protestaram, gritando:
 
@@ -142,7 +142,7 @@ Alguns se puseram de joelhos e tentaram orar. Parecia a melhor escolha. No entan
 
 Em desespero, José se limitou a abaixar e tapar os ouvidos. Não conseguia suportar mais os gritos de terror. Ficou assim por muito tempo, até que o silêncio voltou.
 
-— Sempre o último, não é, número cinquenta? — disse o Diabo.
+— Quanta coincidência — disse o Diabo. — Sempre o último, não é, número cinquenta?
 
 José levantou a cabeça. Todos os outros já haviam desaparecido, exceto o rapaz de número onze.
 
@@ -166,11 +166,11 @@ O rapaz não respondeu. Manteve-se sentado, de cabeça erguida.
 
 — Você não entenderia — o rapaz finalmente se pronunciou.
 
-— Ótimo, João — o Diabo finalmente o chamou pelo nome. — Como só sobrou você, não precisamos do suspense. — Em um movimento brusco, a lança foi atirada contra o peito do rapaz.
+— Ótimo, João — o Diabo finalmente o chamou pelo nome. — Como só sobrou você, não precisamos do suspense da aleatoriedade. — Em um movimento brusco, atirou a lança contra o peito do rapaz.
 
-Dessa vez, no entanto, o corpo do jovem não caiu ao chão. Em vez disso, ele permaneceu de pé enquanto a vida saía de seus olhos. Por fim, nenhuma mão tentou arrastá-lo para o mármore. Seu corpo virou luz ali mesmo e se desfez em um brilho reluzente.
+Dessa vez, no entanto, o corpo do jovem não caiu ao chão. Em vez disso, ele permaneceu sentado, sereno, enquanto a vida saía de seus olhos. Por fim, nenhuma mão tentou arrastá-lo para o mármore. Seu corpo virou luz ali mesmo e se desfez em um brilho reluzente.
 
-— Escutou bem o nome dele? — o Diabo perguntou a José. — Quero que você se lembre, até o seu último dia, do nome da pessoa que você escolheu sacrificar. João… Por culpa dele, de vocês cem eu só conseguirei levar noventa e oito almas comigo hoje, mas aguardarei ansiosamente a nonagésima nona: a sua!
+— Escutou bem o nome dele? — o Diabo perguntou a José. — Quero que você se lembre, até o seu último dia, do nome da pessoa que você escolheu sacrificar. João… Quanta ironia. Por culpa dele, de vocês cem eu só conseguirei levar noventa e oito almas comigo hoje, mas aguardarei ansiosamente a nonagésima nona: a sua!
 
 Em um riso nefasto, tudo aquilo foi se desfazendo aos poucos: o céu desapareceu em escuridão, seguido pela névoa e pelo mármore.
 

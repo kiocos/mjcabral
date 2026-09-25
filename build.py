@@ -3,6 +3,7 @@
 
 import argparse
 import html
+from hashlib import sha256
 from pathlib import Path
 import re
 
@@ -51,6 +52,7 @@ def render():
 
     title = html.escape(blocks[0][2:].strip())
     author = html.escape(blocks[1].strip())
+    stylesheet_version = sha256((ROOT / "style.css").read_bytes()).hexdigest()[:12]
     paragraphs = "\n".join(
         f"        <p>{inline(' '.join(block.splitlines()))}</p>" for block in blocks[2:]
     )
@@ -67,7 +69,7 @@ def render():
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/literata-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/reading-fonts.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v={stylesheet_version}">
   <script src="endpiece.js" defer></script>
 </head>
 <body>

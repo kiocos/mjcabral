@@ -103,10 +103,6 @@ h1 {
   widows: 3;
 }
 
-.story p:first-child {
-  text-indent: 0;
-}
-
 .story .end-word {
   -webkit-hyphens: none;
   hyphens: none;
