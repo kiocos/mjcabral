@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@chenglou/pretext": "0.0.9",
+    "@vercel/analytics": "^2.0.1",
     "hyphen": "1.14.1"
   },
   "devDependencies": {

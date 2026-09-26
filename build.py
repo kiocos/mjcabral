@@ -62,6 +62,10 @@ def render():
   <meta name="color-scheme" content="light">
   <title>{title}</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>
+    window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <script src="theme.js?v={theme_version}"></script>
   <link rel="preload" href="assets/fonts/literata-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/reading-fonts.css">
